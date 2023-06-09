@@ -1,0 +1,75 @@
+<odoo>
+  <data>
+
+    <record id="sync_image_product_tree" model="ir.ui.view">
+      <field name="name">Sync Image Product</field>
+      <field name="model">sync.image_product</field>
+      <field name="priority">2</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="url_database"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="sync_image_product_form" model="ir.ui.view">
+      <field name="name">Sync Image Product</field>
+      <field name="model">sync.image_product</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="logging_db" string="Logging" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+            <button name="import_data" string="Import Images" type="object" attrs="{'invisible': [('state', '!=', 'logging')]}"/>
+            <field name="state"  widget="statusbar"/>
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name"/>
+              </h1>
+            </div>
+            <div>
+              <group>
+                <group>
+                  <field name="url_database" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                  <field name="database_name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </group>
+                <group>
+                  <field name="username_database" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                  <field name="password_username_database" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </group>
+              </group>
+              <group>
+                <group>
+                  <field name="product_type" required="1"/>
+                  <field name="field_reference_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible': [('state', '!=', 'logging')]}"/>
+                </group>
+                <group>
+                  <field name="field_image_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible': [('state', '!=', 'logging')]}"/>
+                  <field name="set_field_image_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible': [('state', '!=', 'logging')]}" domain="['&amp;', ['model_id', 'ilike', 'product'], '|', ['name', 'ilike', 'image'], ['field_description', 'ilike', 'image']]"/>
+                </group>
+              </group>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="act_sync_image_product" model="ir.actions.act_window">
+      <field name="res_model">sync.image_product</field>
+      <field name="name">Sync Image Product</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="sync_image_product_tree"></field>
+    </record>
+
+    <menuitem id="menu_sync_image_product_parent"
+      parent="base.menu_automation"
+      groups="base.group_system"
+      sequence="900"
+      action="act_sync_image_product"
+      name="Sync Image Product"/>
+
+  </data>
+</odoo>
