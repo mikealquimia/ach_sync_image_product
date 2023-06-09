@@ -4,7 +4,7 @@
     'summary': """
         module to migrate image from any version of Odoo""",
     'description': """
-        module to migrate image from any version of Odoo
+        It doesn't matter which version you want to migrate the images from
     """,
     'author': "Gt Alchemy Development",
     'license': 'LGPL-3',
@@ -18,4 +18,5 @@
         'security/ir.model.access.csv',
         'views/odoo_sync.xml',
     ],
+    'images': ['static/description/banner.png'],
 }
