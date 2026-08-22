@@ -1,0 +1,142 @@
+<section class="oe_container">
+
+    <div class="oe_row oe_spaced" style="text-align:center; padding: 20px 0;">
+        <img src="icon.png" style="width:84px;height:84px;border-radius:50%;" alt="ACH Alchemical Code"/>
+        <h1 style="margin-top:10px;">Sync Image Product</h1>
+        <h4 style="color:#8B5E34;">Pull product images from another Odoo database via XML-RPC</h4>
+    </div>
+
+    <!-- ==================== FEATURE GRID ==================== -->
+    <div class="oe_row oe_spaced">
+        <table style="width:100%; text-align:center;">
+            <tr>
+                <td>Cross-database import</td>
+                <td>No custom API needed</td>
+                <td>Match by any reference field</td>
+                <td>Odoo 19</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2 style="text-align:center; margin-top:30px;">Bring product images over from any other Odoo</h2>
+    <p style="text-align:center; color:#555;">Connect to a remote Odoo database over XML-RPC, pick which field identifies a matching product on both sides, and pull the image straight into your local products.</p>
+
+    <!-- ==================== FEATURE BLOCKS (emoji + title + text) ==================== -->
+    <div class="oe_row oe_spaced">
+        <table style="width:100%;">
+            <tr>
+                <td style="width:50%; vertical-align:top; padding:15px;">
+                    <h3>&#128279; Direct XML-RPC connection</h3>
+                    <p>Log in to any remote Odoo (any recent version) with its URL, database name, and user credentials — no extra module needed on the remote side.</p>
+                </td>
+                <td style="width:50%; vertical-align:top; padding:15px;">
+                    <h3>&#128269; Pick your own matching key</h3>
+                    <p>Use the internal reference, the product name, or any field you like to match a remote record to its local counterpart.</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; vertical-align:top; padding:15px;">
+                    <h3>&#128247; Works with variants or templates</h3>
+                    <p>Choose whether you are pulling images for Product Variants or Product Templates.</p>
+                </td>
+                <td style="width:50%; vertical-align:top; padding:15px;">
+                    <h3>&#9989; One click import</h3>
+                    <p>Once connected, a single "Import Images" click reads every matching remote record and writes the image onto the local field you choose.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <h2 style="text-align:center; margin-top:30px;">How it works</h2>
+    <table style="width:100%;">
+        <tr>
+            <td style="width:5%; font-size:22px; font-weight:bold; color:#8B5E34;">1</td>
+            <td><strong>Create a Sync Image Product record</strong><br/>Under Settings &gt; Technical &gt; Automation &gt; Sync Image Product, enter the remote Odoo's URL, database, user and password, and choose Product Variant or Product Template.</td>
+        </tr>
+        <tr>
+            <td style="width:5%; font-size:22px; font-weight:bold; color:#8B5E34;">2</td>
+            <td><strong>Click "Logging"</strong><br/>The module authenticates against the remote database and reads its available fields for the chosen product model.</td>
+        </tr>
+        <tr>
+            <td style="width:5%; font-size:22px; font-weight:bold; color:#8B5E34;">3</td>
+            <td><strong>Choose the matching fields</strong><br/>Pick the remote reference field (the key shared by both databases), the remote image field, and the local field where the image should be written.</td>
+        </tr>
+        <tr>
+            <td style="width:5%; font-size:22px; font-weight:bold; color:#8B5E34;">4</td>
+            <td><strong>Click "Import Images"</strong><br/>Every remote record with a matching local counterpart gets its image copied over.</td>
+        </tr>
+    </table>
+
+    <!-- ==================== SCREENSHOTS ==================== -->
+    <h2 style="text-align:center; margin-top:30px;">See it in Odoo 19</h2>
+    <table style="width:100%;">
+        <tr>
+            <td style="width:50%; padding:10px;">
+                <img src="screenshot_1.png" style="width:100%; border:1px solid #ddd;" alt="Connection configured, ready to log in"/>
+                <p style="text-align:center; color:#777;">Connection details for the remote Odoo database</p>
+            </td>
+            <td style="width:50%; padding:10px;">
+                <img src="screenshot_2.png" style="width:100%; border:1px solid #ddd;" alt="Reference, remote image and local field selected"/>
+                <p style="text-align:center; color:#777;">Reference field, remote image field and local target field selected after logging in</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%; padding:10px;">
+                <img src="screenshot_3.png" style="width:100%; border:1px solid #ddd;" alt="Product now showing the image pulled from the remote database"/>
+                <p style="text-align:center; color:#777;">Result: the product's image, pulled from the other database, now shows on the local record</p>
+            </td>
+            <td style="width:50%; padding:10px;"></td>
+        </tr>
+    </table>
+
+    <!-- ==================== WHY THIS MODULE ==================== -->
+    <h2 style="text-align:center; margin-top:30px;">Why this module</h2>
+    <table style="width:100%;">
+        <tr>
+            <td style="width:5%; color:green; font-weight:bold;">&#10003;</td>
+            <td><strong>No export/import files.</strong> Everything happens live over XML-RPC, straight from one database to the other.</td>
+        </tr>
+        <tr>
+            <td style="width:5%; color:green; font-weight:bold;">&#10003;</td>
+            <td><strong>Version-independent.</strong> It doesn't matter which Odoo version the images are coming from.</td>
+        </tr>
+        <tr>
+            <td style="width:5%; color:green; font-weight:bold;">&#10003;</td>
+            <td><strong>You choose the fields.</strong> Matching key and target field are picked at run time, not hard-coded.</td>
+        </tr>
+    </table>
+
+    <!-- ==================== REQUIREMENTS ==================== -->
+    <h2 style="text-align:center; margin-top:30px;">Requirements</h2>
+    <table style="width:100%; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid #ddd;">
+            <td style="padding:6px; font-weight:bold;">Odoo version</td>
+            <td style="padding:6px;">19.0 (Community or Enterprise)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #ddd;">
+            <td style="padding:6px; font-weight:bold;">Dependencies</td>
+            <td style="padding:6px;">Base only</td>
+        </tr>
+        <tr style="border-bottom:1px solid #ddd;">
+            <td style="padding:6px; font-weight:bold;">Remote side</td>
+            <td style="padding:6px;">Any Odoo database reachable over XML-RPC (no module needed on that side)</td>
+        </tr>
+    </table>
+
+    <!-- ==================== FAQ ==================== -->
+    <h2 style="text-align:center; margin-top:30px;">Frequently asked questions</h2>
+    <p><strong>Does the remote Odoo need this module installed too?</strong><br/>No. The connection is a plain XML-RPC login against the remote database's standard API.</p>
+    <p><strong>Can I match products by their name instead of the internal reference?</strong><br/>Yes, the reference field is any field you pick after logging in — internal reference, name, barcode, or any custom field.</p>
+
+    <!-- ==================== FIXED FOOTER — DO NOT CHANGE ==================== -->
+    <div class="oe_row oe_spaced" style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid #eee;">
+        <img src="icon.png" style="width:48px;height:48px;border-radius:50%;" alt="ACH Alchemical Code"/>
+        <p style="font-weight:bold; margin-top:8px;">ACH Alchemical Code</p>
+        <p style="color:#777;">
+            Questions before you buy, or need support after installing?<br/>
+            Contact us: mikealquimia@gmail.com
+        </p>
+    </div>
+
+</section>
