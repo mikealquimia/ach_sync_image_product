@@ -9,7 +9,7 @@
     'author': "Gt Alchemy Development",
     'license': 'LGPL-3',
     'support': 'developmentalchemygx@gmail.com',
-    'price': 5.00,
+    'price': 3.00,
     'currency': 'USD',
     'category': 'Uncategorized',
     'version': '0.1',
