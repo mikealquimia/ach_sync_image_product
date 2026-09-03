@@ -16,7 +16,7 @@
     'support': 'mikealquimia@gmail.com',
     'license': 'OPL-1',
 
-    'price': 5.27,
+    'price': 3.00,
     'currency': 'USD',
     'images': ['static/description/banner.png'],
 
